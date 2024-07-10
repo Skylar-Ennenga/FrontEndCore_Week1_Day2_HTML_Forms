@@ -1,0 +1,178 @@
+<!-- 1. Exploring New HTML5 Input Types
+
+Objective: The aim of this assignment is to familiarize students with the new HTML5 input types and their practical applications in web form development. 
+Students will learn how to use these input types to enhance user experience and streamline data collection.
+
+Task 1: Implementing Email Input
+Expected Outcomes: Students should be able to create an email input field and use HTML5 validation for email addresses.
+
+Task 2: Utilizing Number Input
+Expected Outcomes: Students should be able to create a number input field with specified constraints and step increments.
+
+Task 3: Employing Date Input
+Expected Outcomes: Students should be able to create a date input field and define date format and range using HTML5 attributes.
+
+Task 4: Enhancing User Experience with Range Input
+Expected Outcomes: Students should be able to create a range input field, set its constraints.
+
+(BONUS) Task 5: Capturing Color with Color Input
+Expected Outcomes: Students should be able to create a color input field and set an initial color using the value attribute. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <form>
+        <h1>Please enter your email to recieve Apple facts!</h1>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Please Enter an email" required>
+        <input type="submit" value="Submit">
+    </form>
+    <br />
+    <form>
+        <h1>Apples?</h1>
+        <h3>How many apples would you like to buy?</h6>
+            <h6>They come in groups of 3!</h6>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" min="0" max="28" step="3">
+
+            <input type="submit" value="Submit">
+    </form>
+    <br />
+    <form>
+        <h1>When would you like to recieve your apples?</h1>
+        <h3>Apples are best when fresh!</h3>
+        <h6>We Offer free 64 day delievery!</h6>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" placeholder="Please select a delivery date" min="2024-01-01"
+            max="2025-12-31">
+    </form>
+    <br />
+    <form>
+        <h1>How many apples would you rate us?</h1>
+        <h3>Apples are pretty yummy!</h3>
+        <h6>Rate us from 1-10!</h6>
+        <label for="rating">Rating:</label>
+        <input type="range" id="rating" name="rating" placeholder="Please givve us a 10" min="1" max="10" step="1">
+    </form>
+    <br />
+    <form>
+        <h1>What color apple would you like?</h1>
+        <label for="color">Apple color:</label>
+        <input type="color" id="color" name="color" placeholder="#000000" value="#ff0000">
+
+    </form>
+    <br />
+    <button type="reset">Reset</button>
+    <button type="submit">Submit</button>
+
+
+
+
+</body>
+
+</html>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<!-- 2. Building a Comprehensive Web Form
+
+Objective: The objective of this assignment is to give students the opportunity to add to their multi-element web form by incorporating various form elements, including radio buttons, checkboxes, and select menus. 
+Students will also practice implementing form validation and improving accessibility.
+
+Task 1: Creating a Selection Experience
+Expected Outcomes: Students should be able to create a selection experience with select menus, radio buttons, and checkboxes to capture user preferences.
+
+Task 2: Improving Accessibility
+Expected Outcomes: Students should be able to enhance the accessibility of the web form by associating labels with form elements and implementing ARIA attributes. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome to Coding Temple</h1>
+    <h3>Lets get some information about you!</h3>
+
+        <!-- Wow NVDA a is alot it yelling at me -->
+        <!--Little confused by this i downloaded NVDA and this didnt really do much and i also added it for 
+        the Favorite Programming language and it seemed to be less helpful. 
+        How it is now it would read every Option but with the ARIA code it wouldnt?
+        Something i will be asking about tomorrow in class. -->
+
+
+        <form aria-labelledby="form-title" aria-describedby="form-description" role="form">
+        <div id="form-title" hidden>Personal Information Form</div>
+        <div id="form-description" hidden>Fill out the form below with your details.</div>
+        
+            <br />
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Please Enter your name" required>
+            <br />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Please Enter an email" required>
+            <br />
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Please Enter a phone number" required>
+            <br />
+            <label for="language">Favorite Programming Language:</label>
+            <select id="language" name="language">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="c++">C++</option>
+                <option value="c#">C#</option>
+            </select>
+            <!-- <div role="group" aria-labelledby="language-label">
+                <label id="language-label" for="language">Favorite Programming Language:</label>
+                <select id="language" name="language" aria-required="true">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="c++">C++</option>
+                    <option value="c#">C#</option>
+                </select>
+            </div>
+            <br /> -->
+            <br />
+            <label for="expertise">Expertise:</label>
+            <input type="radio" id="beginner" name="expertise" value="beginner">
+            <label for="beginner">Beginner</label>
+            <input type="radio" id="intermediate" name="expertise" value="intermediate">
+            <label for="intermediate">Intermediate</label>
+            <input type="radio" id="advanced" name="expertise" value="advanced">
+            <label for="advanced">Advanced</label>
+            <br />
+            <label for="platform">Development Platforms:</label>
+            <input type="checkbox" id="web" name="platform" value="web">
+            <label for="web">Web</label>
+            <input type="checkbox" id="mobile" name="platform" value="mobile">
+            <label for="mobile">Mobile</label>
+            <input type="checkbox" id="desktop" name="platform" value="desktop">
+            <label for="desktop">Desktop</label>
+            <br />
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+
+</body>
+
+</html>
